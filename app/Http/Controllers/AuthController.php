@@ -42,7 +42,7 @@ class AuthController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('register');
+        return view('registro');
     }
 
     /**
@@ -72,7 +72,7 @@ class AuthController extends Controller
      */
     public function showForgotPasswordForm()
     {
-        return view('forgot_password');
+        return view('Recuperar_contraseña');
     }
 
     /**
@@ -96,7 +96,7 @@ class AuthController extends Controller
      */
     public function showResetPasswordForm($token)
     {
-        return view('reset_password', ['token' => $token]);
+        return view('Recuperar_contraseña', ['token' => $token]);
     }
 
     /**
