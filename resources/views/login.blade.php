@@ -70,8 +70,8 @@
         <input type="submit" value="Iniciar Sesión">
     </form>
     <div class="options">
-        <a href="/register">Registrarse</a> |
-        <a href="/forgot-password">Recuperar Contraseña</a>
+        <a href="/registro">Registrarse</a> |
+        <a href="/Recuperar_contraseña">Recuperar Contraseña</a>
     </div>
 </div>
 
