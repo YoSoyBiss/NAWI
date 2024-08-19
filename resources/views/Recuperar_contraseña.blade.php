@@ -69,7 +69,7 @@
     </form>
     <div class="options">
         <a href="/login">Iniciar Sesión</a> |
-        <a href="/register">Registrarse</a>
+        <a href="/registro">Registrarse</a>
     </div>
 </div>
 
