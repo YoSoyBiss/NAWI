@@ -64,6 +64,7 @@
 <div class="recover-container">
     <h2>Recuperar Contraseña</h2>
     <form action="/Recuperar_contraseña" method="POST">
+        @csrf
         <input type="email" name="email" placeholder="Correo electrónico" required>
         <input type="submit" value="Enviar enlace de recuperación">
     </form>

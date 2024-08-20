@@ -29,7 +29,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('welcome');
+            return redirect()->intended('');
         }
 
         return back()->withErrors([
@@ -94,7 +94,7 @@ class AuthController extends Controller
      */
     public function showResetPasswordForm($token)
     {
-        return view('Recuperar_contraseña', ['token' => $token]);
+        return view('resetear_contraseña', ['token' => $token]);
     }
 
     /**
