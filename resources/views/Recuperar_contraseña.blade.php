@@ -63,7 +63,7 @@
 
 <div class="recover-container">
     <h2>Recuperar Contraseña</h2>
-    <form action="/forgot-password" method="POST">
+    <form action="/Recuperar_contraseña" method="POST">
         <input type="email" name="email" placeholder="Correo electrónico" required>
         <input type="submit" value="Enviar enlace de recuperación">
     </form>
