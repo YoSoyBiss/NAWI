@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAWI</title>
+    <title>Historias de la Cultura Mexicana</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,12 +20,18 @@
             align-items: center;
         }
 
+        nav {
+            flex: 1;
+            text-align: center;
+        }
+
         nav ul {
             list-style: none;
-            display: flex;
+            display: inline-flex;
             margin: 0;
             padding: 0;
         }
+
         nav ul li {
             margin: 0 15px;
         }
@@ -34,6 +40,16 @@
             color: white;
             text-decoration: none;
             font-size: 18px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 60px;
+            height: auto;
         }
 
         .perfil {
@@ -46,6 +62,7 @@
             height: 40px;
             border-radius: 50%;
             cursor: pointer;
+            margin-left: 20px;
         }
 
         main {
@@ -104,6 +121,9 @@
 </head>
 <body>
     <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
