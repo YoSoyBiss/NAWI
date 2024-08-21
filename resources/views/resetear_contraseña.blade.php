@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restablecer Contraseña</title>
     <link rel="stylesheet" href="{{ asset('css styles/resetear_contraseña.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Nunito:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="reset-container">
+    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo">
     <h2>Restablecer Contraseña</h2>
     <form action="{{ route('password.update') }}" method="POST">
         @csrf

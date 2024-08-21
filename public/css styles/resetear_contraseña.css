@@ -1,41 +1,55 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #E6E6FA; /* Lavanda */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
 }
+
 .reset-container {
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
     width: 300px;
-}
-.reset-container h2 {
-    margin-bottom: 20px;
     text-align: center;
 }
+
+.reset-container .logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.reset-container h2 {
+    font-family: 'Libre Baskerville', serif;
+    margin-bottom: 20px;
+    color: #FFC0CB; /* Rosa */
+}
+
 .reset-container input[type="email"],
 .reset-container input[type="password"] {
+    font-family: 'Open Sans', sans-serif;
     width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 .reset-container input[type="submit"] {
+    font-family: 'Nunito', sans-serif;
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #98FF98; /* Verde claro */
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
 }
+
 .reset-container input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #ADD8E6; /* Azul claro */
 }
