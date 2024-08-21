@@ -9,10 +9,6 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/registro', [AuthController::class, 'showRegistrationForm'])->name('registro');
 Route::post('/registro', [AuthController::class, 'register']);
 
-//Route::get('/Recuperar_contraseña', [AuthController::class, 'showForgotPasswordForm'])->name('Recuperar_contraseña');
-//Route::post('/Recuperar_contraseña', [AuthController::class, 'sendPasswordResetLink']);
-
-
 // Muestra el formulario para solicitar el enlace de recuperación de contraseña
 Route::get('/Recuperar_contraseña', [AuthController::class, 'showForgotPasswordForm'])->name('password.request');
 
@@ -28,4 +24,8 @@ Route::post('/resetear_contraseña', [AuthController::class, 'resetPassword'])->
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/home', function () {
+    return view('home');
 });

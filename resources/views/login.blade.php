@@ -10,7 +10,17 @@
 
 <div class="login-container">
     <h2>Iniciar Sesión</h2>
+    @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     <form action="/login" method="POST">
+    @csrf
         <input type="email" name="email" placeholder="Correo electrónico" required>
         <input type="password" name="password" placeholder="Contraseña" required>
         <input type="submit" value="Iniciar Sesión">
