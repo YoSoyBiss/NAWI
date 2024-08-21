@@ -14,17 +14,18 @@
 
         header {
             background-color: #2c3e50;
-            padding: 10px 0;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
             margin: 0;
             padding: 0;
         }
-
         nav ul li {
             margin: 0 15px;
         }
@@ -33,6 +34,18 @@
             color: white;
             text-decoration: none;
             font-size: 18px;
+        }
+
+        .perfil {
+            display: flex;
+            align-items: center;
+        }
+
+        .perfil img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
         }
 
         main {
@@ -99,6 +112,11 @@
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
+        <div class="perfil">
+            <a href="#perfil">
+                <img src="perfil.jpg" alt="Perfil">
+            </a>
+        </div>
     </header>
 
     <main>
