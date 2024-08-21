@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historias de la Cultura Mexicana</title>
+    <title>Home de NAWI</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -160,7 +160,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Historias de la Cultura Mexicana. Todos los derechos reservados.</p>
+        <p>&copy; 2024 NAWI. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
