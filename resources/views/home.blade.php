@@ -106,7 +106,7 @@
     <header>
         <img src="public/images/logo.png" alt="Logo" class="logo">
         <nav>
-            <a href="#">Cuentos</a>
+            <a href="/leyendas">Cuentos</a>
             <a href="#">Actividades</a>
             <a href="#">Progreso</a>
         </nav>
