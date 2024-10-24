@@ -31,6 +31,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/leyendas', function () {
+    return view('leyendas');
+});
 
 Route::get('/', function () {
     return view('welcome');
