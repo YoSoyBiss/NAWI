@@ -80,7 +80,7 @@
 </head>
 <body>
     <header>
-        <img src="public/images/logo.png" alt="Logo" class="logo">
+        <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo">
         <nav>
             <a href="#">Cuentos</a>
             <a href="#">Actividades</a>
@@ -92,7 +92,7 @@
     <main>
         <section class="content">
             <h1>La leyenda del maíz</h1>
-            <img src="public/images/quetza_maiz.webp" alt="Imagen de la leyenda del maíz">
+            <img src="{{ asset('public/images/quetza_maiz.webp') }}" alt="Imagen de la leyenda del maíz">
             <p>
                 Cuenta la leyenda que muchos siglos atrás, antes de la existencia del dios Quetzalcóatl, el pueblo azteca solo se alimentaba de raíces y animales.
 
