@@ -84,18 +84,18 @@
 </head>
 <body>
     <header>
-        <img src="images/logo.png" alt="Logo" class="logo">
+    <a href="/home"><img src="images/logo.png" alt="Logo" class="logo"></a>
         <nav>
-            <a href="#">Cuentos</a>
+            <a href="/cuentos">Cuentos</a>
             <a href="#">Actividades</a>
             <a href="#">Progreso</a>
         </nav>
-        <a href="#" class="logout">Cerrar Sesión</a>
+        <a href="login" class="logout">Cerrar Sesión</a>
     </header>
     
     <main>
         <!-- Cada .leyenda-card representa una leyenda con su imagen y descripción -->
-        <a href="leyenda"><div class="leyenda-card">
+        <a href="/leyendas"><div class="leyenda-card">
             <img src="images/miaz.jpg" >
             <h2>La leyenda del Maiz</h2>
             <p>Conoce la historia del nopal, un símbolo de la cultura mexicana y su conexión con la fundación de Tenochtitlán.</p>

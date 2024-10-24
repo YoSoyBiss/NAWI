@@ -104,19 +104,19 @@
 </head>
 <body>
     <header>
-        <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo">
+    <a href="/home"><img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo"></a>
         <nav>
-            <a href="/leyendas">Cuentos</a>
+            <a href="/cuentos">Cuentos</a>
             <a href="#">Actividades</a>
             <a href="#">Progreso</a>
         </nav>
-        <a href="#" class="logout">Cerrar Sesión</a>
+        <a href="/login" class="logout">Cerrar Sesión</a>
     </header>
     
     <main>
         <section class="left-section">
             <h1>Nawi</h1>
-            <img src="{{ asset('images/logo.png') }}" alt="Axolotl" class="axolotl-image">
+            <img src="{{ asset('images/logo.png') }}" alt="Axolotl" class="axolotl-image"></a>
             <p>¡Atrevete a conocer más sobre los cuentos de nuestro México!</p>
         </section>
         
