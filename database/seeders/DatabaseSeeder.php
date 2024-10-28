@@ -2,22 +2,27 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Narrative;
+use App\Models\NarrativeContent;
+use App\Models\Exercise;
+use App\Models\Progress;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
-    public function run(): void
+    public function run()
     {
-        // User::factory(10)->create();
+        // Crear usuarios
+        User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // Crear narrativas y contenido
+        Narrative::factory(5)->create()->each(function ($narrative) {
+            NarrativeContent::factory()->create(['narrative_id' => $narrative->id]);
+            Exercise::factory(3)->create(['narrative_id' => $narrative->id]);
+        });
+
+        // Crear progreso para cada usuario y narrativa
+        Progress::factory(30)->create();
     }
 }
