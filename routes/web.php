@@ -42,3 +42,7 @@ Route::get('/', function () {
 Route::get('/cuentos', function () {
     return view('cuentos');
 });
+
+Route::get('/cuestionario', function () {
+    return view('cuestionario');
+});
