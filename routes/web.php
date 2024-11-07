@@ -44,5 +44,5 @@ Route::get('/cuentos', function () {
 });
 
 Route::get('/cuestionario', function () {
-    return view('cuestionario');
+    return view('Cuestionario');
 });
