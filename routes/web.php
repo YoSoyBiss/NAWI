@@ -42,10 +42,7 @@ Route::get('/', function () {
 Route::get('/cuentos', function () {
     return view('cuentos');
 });
-<<<<<<< HEAD
-=======
 
 Route::get('/cuestionario', function () {
     return view('Cuestionario');
 });
->>>>>>> b5cb81c313eb540e539817fd9a495eb447af91b3
