@@ -13,7 +13,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #fffacd; /* Color de fondo de la página */
+            background-color: #fffacd;
             color: #333;
         }
 
@@ -43,18 +43,48 @@
             font-weight: bold;
         }
 
-        main {
+        .search-bar {
             display: flex;
             justify-content: center;
+            padding: 20px;
+            gap: 10px;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        .search-bar button {
+            padding: 8px 12px;
+            background-color: #62959a;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 40px;
-            flex-wrap: wrap; /* Permite que los cuadros de leyendas se ajusten y envuelvan */
-            gap: 20px; /* Espacio entre los cuadros de leyendas */
+            gap: 20px;
+        }
+
+        .leyendas-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
         }
 
         .leyenda-card {
-            background-color: #f0f3ff; /* Fondo de cada leyenda */
+            background-color: #f0f3ff;
             padding: 20px;
-            width: 300px; /* Ancho de cada cuadro de leyenda */
+            width: 300px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
@@ -84,7 +114,7 @@
 </head>
 <body>
     <header>
-    <a href="/home"><img src="images/logo.png" alt="Logo" class="logo"></a>
+        <a href="/home"><img src="images/logo.png" alt="Logo" class="logo"></a>
         <nav>
             <a href="/cuentos">Cuentos</a>
             <a href="#">Actividades</a>
@@ -94,26 +124,49 @@
     </header>
     
     <main>
-        <!-- Cada .leyenda-card representa una leyenda con su imagen y descripción -->
-        <a href="/leyendas"><div class="leyenda-card">
-            <img src="images/miaz.jpg" >
-            <h2>La leyenda del Maiz</h2>
-            <p>Conoce la historia del nopal, un símbolo de la cultura mexicana y su conexión con la fundación de Tenochtitlán.</p>
-        </div></a>
-        
-        <div class="leyenda-card">
-            <img src="images/luna.png" alt="La leyenda de la Luna">
-            <h2>La leyenda de la Luna</h2>
-            <p>Descubre el relato de cómo la Luna llegó a ser la fiel compañera del sol en las noches estrelladas de México.</p>
+        <!-- Barra de búsqueda dentro de main -->
+        <form class="search-bar" onsubmit="return searchLeyendas()">
+            <input type="text" id="searchInput" placeholder="Buscar leyenda...">
+            <button type="submit">Buscar</button>
+        </form>
+
+        <div class="leyendas-container" id="leyendas">
+            <div class="leyenda-card">
+                <img src="images/miaz.jpg" alt="La leyenda del Maiz">
+                <h2>La leyenda del Maiz</h2>
+                <p>Conoce la historia del maíz, un símbolo de la cultura mexicana.</p>
+            </div>
+            
+            <div class="leyenda-card">
+                <img src="images/luna.png" alt="La leyenda de la Luna">
+                <h2>La leyenda de la Luna</h2>
+                <p>Descubre el relato de cómo la Luna llegó a ser la compañera del sol.</p>
+            </div>
+            
+            <div class="leyenda-card">
+                <img src="images/pi.jpg" alt="Popocatépetl e Iztaccíhuatl">
+                <h2>Popocatépetl e Iztaccíhuatl</h2>
+                <p>Una trágica historia de amor que dio origen a dos de los volcanes más icónicos de México.</p>
+            </div>
         </div>
-        
-        <div class="leyenda-card">
-            <img src="images/pi.jpg" alt="La leyenda de Popocatépetl e Iztaccíhuatl">
-            <h2>Popocatépetl e Iztaccíhuatl</h2>
-            <p>Una trágica historia de amor que dio origen a dos de los volcanes más icónicos de México.</p>
-        </div>
-        
-        <!-- Agregar más leyendas aquí según sea necesario -->
     </main>
+
+    <script>
+        function searchLeyendas() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const cards = document.querySelectorAll(".leyenda-card");
+
+            cards.forEach(card => {
+                const title = card.querySelector("h2").textContent.toLowerCase();
+                if (title.includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+            
+            return false; // Evitar recargar la página
+        }
+    </script>
 </body>
 </html>
