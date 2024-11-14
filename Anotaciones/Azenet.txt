@@ -1,0 +1,27 @@
+definir casos de prueba por cada caso de uso.?
+-----------------------------------------------------------------------------
+
+Se deben hacer pruebas y al menos tener una 
+
+Herramientas de pruebas:  SonarQube
+			  Selenium
+
+IEEE829
+° Diseño de casos de prueba
+° Plan de pruebas 
+° Ejecución
+° Informe de resultados 
+-----------------------------------------------------------------------------
+
+Tipos de pruebas 
+Unitarias
+De integración 
+De regresión
+
+-----------------------------------------------------------------------------
+
+  Requisitos
+  Diseño
+  Construcción
+° Pruebas (Paso en el que estamos) (Definir fechas)
+  Mantenimiento 
