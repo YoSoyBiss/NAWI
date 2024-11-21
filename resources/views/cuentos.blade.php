@@ -91,6 +91,19 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            cursor: pointer; /* Indicar que es interactivo */
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .leyenda-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilo para las tarjetas seleccionadas */
+        .leyenda-card.selected {
+            border: 2px solid #62959a;
+            box-shadow: 0 4px 12px rgba(98, 149, 154, 0.5);
         }
 
         .leyenda-card img {
@@ -152,6 +165,7 @@
     </main>
 
     <script>
+        // Función para buscar leyendas
         function searchLeyendas() {
             const input = document.getElementById("searchInput").value.toLowerCase();
             const cards = document.querySelectorAll(".leyenda-card");
@@ -167,6 +181,13 @@
             
             return false; // Evitar recargar la página
         }
+
+        // Función para seleccionar tarjetas
+        document.querySelectorAll(".leyenda-card").forEach(card => {
+            card.addEventListener("click", () => {
+                card.classList.toggle("selected");
+            });
+        });
     </script>
 </body>
 </html>
