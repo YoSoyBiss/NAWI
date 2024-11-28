@@ -12,10 +12,10 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('categorias', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id(); // Primary key
             $table->string('name'); // Nombre de la categoría
-            $table->text('descripcion')->nullable(); // Descripción opcional
+            $table->text('description')->nullable(); // Descripción opcional
             $table->timestamps(); // Created at / Updated at
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('categorias');
+        Schema::dropIfExists('categories');
     }
 };
