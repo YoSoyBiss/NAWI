@@ -13,18 +13,11 @@ return new class extends Migration
     {
         Schema::create('narratives', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('cover_image'); // Ruta de la imagen de portada
+            $table->string('name');
+            $table->string('description')->nullable();
+            $table->string('image'); // Ruta de la imagen
             $table->timestamps();
         });
     }
     
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('narratives');
-    }
 };

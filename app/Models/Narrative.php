@@ -9,7 +9,7 @@ class Narrative extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'cover_image'];
+    protected $fillable = ['name', 'description', 'image'];
 
     // Relación uno a uno con NarrativeContent
     public function content()

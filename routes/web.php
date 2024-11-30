@@ -2,6 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\NarrativeController;
+use App\Http\Controllers\ExerciseController;
+
+Route::get('/cuentos', [NarrativeController::class, 'index']);
+Route::get('/leyendas/{id}', [NarrativeController::class, 'show'])->name('narratives.show');
+
+// Ruta para listar todos los cuestionarios
+Route::get('/Actividades', [ExerciseController::class, 'index'])->name('exercises.index');
+
+// Ruta para ver un cuestionario específico
+Route::get('/ejercicio/{id}', [ExerciseController::class, 'show'])->name('exercises.show');
+Route::post('/ejercicio/{id}/submit', [ExerciseController::class, 'submit'])->name('exercises.submit');
+
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -31,18 +44,11 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
-Route::get('/leyendas', function () {
-    return view('leyendas');
-});
+
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/cuentos', function () {
-    return view('cuentos');
-});
 
-Route::get('/cuestionario', function () {
-    return view('Cuestionario');
-});
+

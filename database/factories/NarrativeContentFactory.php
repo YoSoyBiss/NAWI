@@ -13,9 +13,9 @@ class NarrativeContentFactory extends Factory
     public function definition()
     {
         return [
-            'narrative_id' => Narrative::factory(),
-            'text' => $this->faker->paragraphs(5, true),
-            'video_url' => $this->faker->url,
+            'narrative_id' => Narrative::factory(), // Relación con Narrative
+            'text' => $this->faker->paragraphs(3, true),
+            'video_url' => 'https://www.youtube.com/embed/' . $this->faker->lexify('??????'),
         ];
     }
 }

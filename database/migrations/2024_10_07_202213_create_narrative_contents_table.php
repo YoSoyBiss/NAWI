@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('narrative_content', function (Blueprint $table) {
+        Schema::create('narrative_contents', function (Blueprint $table) {
             $table->id();
             $table->foreignId('narrative_id')->constrained('narratives')->onDelete('cascade');
             $table->text('text');

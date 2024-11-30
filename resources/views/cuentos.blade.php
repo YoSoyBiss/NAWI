@@ -8,40 +8,37 @@
 </head>
 <body>
     <header>
-        <a href="/home"><img src="images/logo.png" alt="Logo" class="logo"></a>
+        <a href="/home"><img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo"></a>
         <nav>
-            <a href="/cuentos">Cuentos</a>
-            <a href="#">Actividades</a>
+            <a href="/Cuentos">Cuentos</a>
+            <a href="/Actividades">Actividades</a>
             <a href="#">Progreso</a>
         </nav>
         <a href="login" class="logout">Cerrar Sesión</a>
     </header>
     
     <main>
-        <!-- Barra de búsqueda dentro de main -->
+        <!-- Barra de búsqueda -->
         <form class="search-bar" onsubmit="return searchLeyendas()">
             <input type="text" id="searchInput" placeholder="Buscar leyenda...">
             <button type="submit">Buscar</button>
         </form>
 
+        <!-- Contenedor de leyendas -->
         <div class="leyendas-container" id="leyendas">
-            <div class="leyenda-card">
-                <img src="images/miaz.jpg" alt="La leyenda del Maiz">
-                <h2>La leyenda del Maiz</h2>
-                <p>Conoce la historia del maíz, un símbolo de la cultura mexicana.</p>
-            </div>
-            
-            <div class="leyenda-card">
-                <img src="images/luna.png" alt="La leyenda de la Luna">
-                <h2>La leyenda de la Luna</h2>
-                <p>Descubre el relato de cómo la Luna llegó a ser la compañera del sol.</p>
-            </div>
-            
-            <div class="leyenda-card">
-                <img src="images/pi.jpg" alt="Popocatépetl e Iztaccíhuatl">
-                <h2>Popocatépetl e Iztaccíhuatl</h2>
-                <p>Una trágica historia de amor que dio origen a dos de los volcanes más icónicos de México.</p>
-            </div>
+            @if($narratives->isEmpty())
+                <p>No se encontraron leyendas.</p>
+            @else
+                @foreach($narratives as $narrative)
+                <div class="leyenda-card">
+    <a href="{{ route('narratives.show', $narrative->id) }}">
+        <img src="{{ asset($narrative->image) }}" alt="{{ $narrative->name }}">
+        <h2>{{ $narrative->name }}</h2>
+        <p>{{ $narrative->description }}</p>
+    </a>
+</div>
+                @endforeach
+            @endif
         </div>
     </main>
 
@@ -59,16 +56,9 @@
                     card.style.display = "none";
                 }
             });
-            
+
             return false; // Evitar recargar la página
         }
-
-        // Función para seleccionar tarjetas
-        document.querySelectorAll(".leyenda-card").forEach(card => {
-            card.addEventListener("click", () => {
-                card.classList.toggle("selected");
-            });
-        });
     </script>
 </body>
 </html>

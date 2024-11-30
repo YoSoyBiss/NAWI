@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Narrative;
+use App\Models\NarrativeContent;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class NarrativeFactory extends Factory
@@ -12,8 +13,33 @@ class NarrativeFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence,
-            'cover_image' => $this->faker->imageUrl(640, 480, 'abstract', true, 'cover'),
+            'name' => $this->faker->sentence,
+            'image' => $this->faker->imageUrl(640, 480, 'abstract', true, 'cover'),
         ];
     }
+
+    public function maiz()
+    {
+        return $this->state([
+            'name' => 'La leyenda del maiz',
+            'image' => 'images/maiz.jpg',
+        ]);
+    }
+    public function nopal()
+    {
+        return $this->state([
+            'name' => 'La leyenda del nopal',
+            'image' => 'images/nopal.png',
+        ]);
+        }
+
+        public function configure()
+        {
+            return $this->afterCreating(function (Narrative $narrative) {
+                NarrativeContent::factory()->create([
+                    'narrative_id' => $narrative->id,
+                ]);
+            });
+        }
+        
 }
