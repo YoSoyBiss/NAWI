@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
+
+        \App\Models\Exercise::factory(1)->create();
         // Crear categorías específicas
         Category::factory()->normal()->create();
         Category::factory()->admin()->create();

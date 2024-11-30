@@ -11,7 +11,7 @@
         <a href="/home"><img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo"></a>
         <nav>
             <a href="/cuentos">Cuentos</a>
-            <a href="/ejercicios">Ejercicios</a>
+            <a href="/Actividades">Ejercicios</a>
             <a href="#">Progreso</a>
         </nav>
         <a href="#" class="logout">Cerrar Sesión</a>

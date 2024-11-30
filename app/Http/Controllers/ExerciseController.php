@@ -17,7 +17,7 @@ class ExerciseController extends Controller
     public function show($id)
     {
         $exercise = Exercise::findOrFail($id); // Buscar el ejercicio por ID
-        return view('ejercicios.show', compact('exercise')); // Retorna la vista con los detalles del ejercicio
+        return view('cuestionario', compact('exercise')); // Retorna la vista con los detalles del ejercicio
     }
 
     public function submit(Request $request, $id)
