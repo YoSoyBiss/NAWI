@@ -5,6 +5,16 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NarrativeController;
 use App\Http\Controllers\ExerciseController;
 
+
+Route::get('/CRUD', [NarrativeController::class, 'indexCRUD']);
+Route::get('/CRUD_Cuestionario', function () {
+    return view('CRUD_Cuestionario');
+});
+
+Route::resource('narratives', NarrativeController::class);
+Route::resource('exercises', ExerciseController::class);
+
+
 Route::get('/cuentos', [NarrativeController::class, 'index']);
 Route::get('/leyendas/{id}', [NarrativeController::class, 'show'])->name('narratives.show');
 

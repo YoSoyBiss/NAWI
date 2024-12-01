@@ -22,5 +22,31 @@ class NarrativeController extends Controller
 
         return view('leyendas', compact('narrative'));
     }
+
+    public function indexCRUD()
+{
+    $narratives = Narrative::with('content', 'exercises')->get();
+    return view('CRUD', compact('narratives'));
+}
+
+public function create()
+{
+    return view('CRUD_Cuestionario');
+}
+
+public function store(Request $request)
+{
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'description' => 'nullable|string',
+        'image' => 'required|image',
+    ]);
+
+    $narrative = Narrative::create($validated);
+    return redirect()->route('CRUD');
+}
+
+// Otros métodos: edit(), update(), destroy()...
+
 }
 

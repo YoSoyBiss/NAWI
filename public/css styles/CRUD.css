@@ -1,0 +1,190 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffacd;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #ccc;
+}
+
+header .logo {
+    height: 60px;
+}
+
+header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+header .logout {
+    text-decoration: none;
+    color: #FFC0CB;
+    font-weight: bold;
+}
+
+/* Botones de acciones generales */
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #62959a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.button:hover {
+    background-color: #507c81;
+}
+
+/* Contenedor principal */
+.container {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Sección para listas */
+.list-section {
+    background-color: #f8f9fc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.list-section h2 {
+    font-size: 1.8rem;
+    color: #62959a;
+    margin-bottom: 15px;
+}
+
+.list-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.list-section ul li {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-section ul li h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.list-section ul li .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.list-section ul li .actions a {
+    font-size: 0.9rem;
+    color: #62959a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.list-section ul li .actions a:hover {
+    text-decoration: underline;
+}
+
+/* Formulario */
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    font-size: 1.5rem;
+    color: #62959a;
+    margin-bottom: 20px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-container form input,
+.form-container form textarea,
+.form-container form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.form-container form button {
+    align-self: flex-start;
+}
+
+/* Actividades y preguntas */
+.activity-card {
+    background-color: #f0f3ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.activity-card h3 {
+    font-size: 1.4rem;
+    color: #62959a;
+    margin-bottom: 10px;
+}
+
+.activity-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.question-card {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+.question-card h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.question-card input[type="text"] {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+}
