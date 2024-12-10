@@ -30,4 +30,5 @@ RUN composer install --no-dev --optimize-autoloader && php artisan optimize && p
 EXPOSE 8080
 
 # Comando de inicio
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=${PORT:-8000}"]
+
