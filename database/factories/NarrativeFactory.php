@@ -13,6 +13,7 @@ class NarrativeFactory extends Factory
     public function definition()
     {
         return [
+            'category_id' => '1',
             'name' => $this->faker->sentence,
             'image' => $this->faker->imageUrl(640, 480, 'abstract', true, 'cover'),
         ];
@@ -21,6 +22,7 @@ class NarrativeFactory extends Factory
     public function maiz()
     {
         return $this->state([
+            'category_id' => "1",
             'name' => 'La leyenda del maiz',
             'image' => 'images/maiz.jpg',
         ]);
@@ -28,8 +30,10 @@ class NarrativeFactory extends Factory
     public function nopal()
     {
         return $this->state([
+            'category_id' => \App\Models\Category::factory(), 
             'name' => 'La leyenda del nopal',
             'image' => 'images/nopal.png',
+            
         ]);
         }
 

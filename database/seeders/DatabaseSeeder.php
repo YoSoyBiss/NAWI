@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        \App\Models\Exercise::factory(1)->create();
+       
         // Crear categorías específicas
         Category::factory()->normal()->create();
         Category::factory()->admin()->create();
@@ -33,5 +33,10 @@ class DatabaseSeeder extends Seeder
             'text' => 'La leyenda del nopal narra cómo el cactus se convirtió en símbolo de resistencia y vida...',
             'video_url' => 'https://www.youtube.com/embed/efgh5678',
         ]);
+
+        Exercise::factory(1)->create();
 }
+
+
+
 }
