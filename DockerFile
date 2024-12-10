@@ -8,7 +8,10 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install pdo pdo_mysql zip bcmath opcache
 
 # Instalar Composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
+
 
 # Configuración del directorio de trabajo
 WORKDIR /app
@@ -21,12 +24,10 @@ COPY .env /app/.env
 RUN chmod -R 775 /app/storage /app/bootstrap/cache
 
 # Instalar dependencias de Laravel
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader && php artisan optimize && php artisan storage:link
 
-# Comandos de Laravel
-RUN php artisan migrate --force && php artisan optimize && php artisan storage:link
 
-EXPOSE 8000
+EXPOSE 8080
 
 # Comando de inicio
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
