@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     unzip \
     git \
-    && docker-php-ext-install pdo pdo_mysql zip
+    && docker-php-ext-install pdo pdo_mysql zip bcmath opcache
 
 # Instalar Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
@@ -15,6 +15,7 @@ WORKDIR /app
 
 # Copiar archivos del proyecto
 COPY . /app
+COPY .env /app/.env
 
 # Ajustar permisos
 RUN chmod -R 775 /app/storage /app/bootstrap/cache
