@@ -11,8 +11,6 @@ Route::get('/CRUD_Cuestionario', function () {
     return view('CRUD_Cuestionario');
 });
 
-Route::resource('narratives', NarrativeController::class);
-Route::resource('exercises', ExerciseController::class);
 
 
 Route::get('/cuentos', [NarrativeController::class, 'index']);
