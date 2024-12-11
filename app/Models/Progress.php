@@ -2,24 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Progress extends Model
 {
-    use HasFactory;
+    // Define los atributos que se pueden asignar masivamente
+    protected $fillable = ['user_id', 'exercise_id', 'correct_answers', 'incorrect_answers', 'total_questions'];
 
-    protected $fillable = ['user_id', 'narrative_id', 'completed_exercises', 'total_exercises'];
+    // Si la tabla no sigue la convención (ejemplo: "progress" en plural)
+    // public $table = 'nombre_tabla';
 
-    // Relación inversa muchos a uno con User
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    // Relación inversa muchos a uno con Narrative
-    public function narrative()
-    {
-        return $this->belongsTo(Narrative::class);
-    }
+    // Si usas timestamps, asegúrate de que esté habilitado
+    // public $timestamps = false;
 }

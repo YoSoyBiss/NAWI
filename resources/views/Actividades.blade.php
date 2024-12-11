@@ -11,8 +11,8 @@
         <a href="/home"><img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo"></a>
         <nav>
             <a href="/cuentos">Cuentos</a>
-            <a href="/Actividades">Ejercicios</a>
-            <a href="#">Progreso</a>
+            <a href="/Actividades">Actividades</a>
+            <a href="/progreso">Progreso</a>
         </nav>
         <a href="#" class="logout">Cerrar Sesión</a>
     </header>
@@ -25,13 +25,14 @@
 
         <section class="leyendas-container">
             @foreach($exercises as $exercise)
-                <div class="leyenda-card">
-                    <a href="{{ route('exercises.show', $exercise->id) }}">
-                        <img src="{{ asset('images/default-image.jpg') }}" alt="Imagen de actividad"> <!-- Puedes cambiar la imagen por la asociada al ejercicio -->
-                        <h2>{{ $exercise->title }}</h2>
-                        <p>{{ Str::limit($exercise->description, 100) }}</p>
-                    </a>
-                </div>
+            <div class="leyenda-card">
+    <a href="{{ route('exercises.show', $exercise->id) }}">
+        <img src="{{ asset('images/default-image.jpg') }}" alt="Imagen de actividad">
+        <h2>{{ $exercise->title }}</h2>
+        <p>{{ Str::limit($exercise->description, 100) }}</p>
+    </a>
+</div>
+
             @endforeach
         </section>
     </main>

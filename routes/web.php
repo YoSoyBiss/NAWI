@@ -4,12 +4,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NarrativeController;
 use App\Http\Controllers\ExerciseController;
+use App\Http\Livewire\NarrativeCrud;
+use App\Http\Controllers\ProgressController;
+
+use App\Http\Controllers\NarrativeController2;
+
+Route::resource('/narratives', NarrativeController2::class);
+Route::get('/progreso', [ProgressController::class, 'show'])->name('progreso.index');
 
 
-Route::get('/CRUD', [NarrativeController::class, 'indexCRUD']);
-Route::get('/CRUD_Cuestionario', function () {
-    return view('CRUD_Cuestionario');
-});
+
+
 
 
 
@@ -19,9 +24,11 @@ Route::get('/leyendas/{id}', [NarrativeController::class, 'show'])->name('narrat
 // Ruta para listar todos los cuestionarios
 Route::get('/Actividades', [ExerciseController::class, 'index'])->name('exercises.index');
 
-// Ruta para ver un cuestionario específico
-Route::get('/ejercicio/{id}', [ExerciseController::class, 'show'])->name('exercises.show');
-Route::post('/ejercicio/{id}/submit', [ExerciseController::class, 'submit'])->name('exercises.submit');
+
+Route::get('/exercises', [ExerciseController::class, 'index']); // Mostrar todas las actividades
+Route::get('/exercises/{id}', [ExerciseController::class, 'show'])->name('exercises.show'); // Mostrar un ejercicio específico
+Route::post('/exercises/{id}/submit', [ExerciseController::class, 'submit'])->name('exercises.submit');
+
 
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -54,9 +61,6 @@ Route::get('/home', function () {
 });
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 

@@ -8,20 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Narrative extends Model
 {
     use HasFactory;
+    protected $fillable = ['category_id', 'name', 'description', 'image'];
 
-    protected $fillable = ['name', 'description', 'image'];
 
-    // Relación uno a uno con NarrativeContent
-    public function content()
-    {
-        return $this->hasOne(NarrativeContent::class);
-    }
 
-    // Relación uno a muchos con Exercise
-    public function exercises()
-    {
-        return $this->hasMany(Exercise::class);
-    }
+// En el modelo Narrative
+public function content()
+{
+    return $this->hasOne(NarrativeContent::class);
+}
+
+public function exercises()
+{
+    return $this->hasMany(Exercise::class);
+}
+
 
     // Relación muchos a muchos con User a través de Progress
     public function progress()

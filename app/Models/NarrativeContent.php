@@ -11,9 +11,9 @@ class NarrativeContent extends Model
 
     protected $fillable = ['narrative_id', 'text', 'video_url'];
 
-    // Relación inversa uno a uno con Narrative
     public function narrative()
     {
         return $this->belongsTo(Narrative::class);
     }
+    
 }

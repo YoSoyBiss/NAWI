@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,7 +10,11 @@ class Exercise extends Model
 
     protected $fillable = ['narrative_id', 'title', 'description', 'questions'];
 
-    // Relación inversa uno a muchos con Narrative
+    // Usamos 'casts' para asegurarnos de que 'questions' se trata como un arreglo
+    protected $casts = [
+        'questions' => 'array',  // Convertir 'questions' a un arreglo
+    ];
+
     public function narrative()
     {
         return $this->belongsTo(Narrative::class);

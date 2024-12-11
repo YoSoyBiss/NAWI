@@ -13,20 +13,32 @@ return new class extends Migration
     {
         Schema::create('progress', function (Blueprint $table) {
             $table->id();
+
+            // Relación con el usuario: Aseguramos que el campo 'user_id' se conecta correctamente con la tabla 'users'
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('narrative_id')->constrained('narratives')->onDelete('cascade');
-            $table->integer('completed_exercises')->default(0);
-            $table->integer('total_exercises');
+
+            // Relación con el ejercicio: Aseguramos que el campo 'exercise_id' se conecta correctamente con la tabla 'exercises'
+            $table->foreignId('exercise_id')->constrained('exercises')->onDelete('cascade');
+
+            // Almacenamos cuántas respuestas correctas e incorrectas tiene el usuario
+            $table->integer('correct_answers')->default(0);
+            $table->integer('incorrect_answers')->default(0);
+
+            // Almacenamos la cantidad total de preguntas de ese ejercicio
+            $table->integer('total_questions');
+
+            // Para evitar problemas de valores nulos, puedes definir valores predeterminados
+            // y también asegurarte de que los campos no sean nulos
             $table->timestamps();
         });
     }
-    
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
+        // Elimina la tabla 'progress' en caso de que necesitemos revertir la migración
         Schema::dropIfExists('progress');
     }
 };
